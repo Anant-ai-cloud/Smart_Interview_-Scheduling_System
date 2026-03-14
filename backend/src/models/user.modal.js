@@ -10,7 +10,8 @@ const userSchema = new Schema({
 
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
 
     password: {
@@ -21,7 +22,7 @@ const userSchema = new Schema({
     role: {
         type: String,
         enum:["admin", "hr", "interviewer", "candidate"],
-        default: "admin"
+        default: "candidate"
     }
 
 },
