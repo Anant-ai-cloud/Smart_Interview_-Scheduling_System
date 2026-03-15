@@ -3,6 +3,7 @@ import "dotenv/config"
 import dbcon from "./dbconn/dbcon.js"
 import cookieparser from "cookie-parser"
 import cors from "cors"
+import authRouter from "./routes/auth.route.js"
 
 
 const app = express()
@@ -18,3 +19,5 @@ app.listen(PORT , (req, res)=>{
 
     console.log(`server is listening on ${PORT}`)
 })
+
+app.use("/api/auth", authRouter)
