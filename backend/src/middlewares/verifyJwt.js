@@ -1,5 +1,6 @@
 import User from "../models/user.modal.js";
 import { ENV } from "../env.js";
+import jwt from "jsonwebtoken"
 
 const authenticate = async(req, res, next)=>{
     try {
