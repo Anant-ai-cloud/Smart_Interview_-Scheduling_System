@@ -39,7 +39,7 @@ const interviewSchema = new Schema({
         default: "not completed"
     },
 
-    meetinglink: {
+    meetingurl: {
         type: String,
         required: true
     }
