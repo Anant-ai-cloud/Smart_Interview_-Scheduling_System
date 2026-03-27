@@ -5,7 +5,8 @@ const feedbackSchema = new Schema({
     interview: {
         type: Schema.Types.ObjectId,
         ref: "Interview",
-        required: true
+        required: true,
+        unique: true
     },
 
     interviewer: {
@@ -18,15 +19,24 @@ const feedbackSchema = new Schema({
         types: Number,
     },
 
-    comments: {
+    comment: {
         type: String,
         required: true
+    },
+
+    publiccomment: {
+         type: String,
     },
 
     result: {
         type: String,
         enum: ["pass", "fail", "hold"],
         default: "hold"
+    },
+
+    isvisible:{
+        type: Boolean,
+        default: false
     }
 
 

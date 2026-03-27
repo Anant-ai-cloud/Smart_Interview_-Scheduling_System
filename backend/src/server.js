@@ -6,6 +6,7 @@ import cors from "cors"
 import authRouter from "./routes/auth.route.js"
 import adminRouter from "./routes/admin.routes.js"
 import hrRouter from "./routes/hr.routes.js"
+import interviewerRouter from "./routes/interviewer.route.js"
 
 
 const app = express()
@@ -25,3 +26,4 @@ app.listen(PORT , (req, res)=>{
 app.use("/api/auth", authRouter)
 app.use("/api/admin", adminRouter)
 app.use("/api/hr", hrRouter)
+app.use("/api/interviewer", interviewerRouter)
