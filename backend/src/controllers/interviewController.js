@@ -7,7 +7,7 @@ export const createInterview = async (req, res) => {
         const hr = req.user._id
         if (!candidate || !interviewer || !date || !time || !meetingurl) return res.status(400).json({ message: "All fields are required" })
 
-        const isInterviewPresent = await Interview.findOne({ candidate: candidate, interviewer: interviewer })
+        const isInterviewPresent = await Interview.findOne({candidate: candidate, interviewer: interviewer})
         if (isInterviewPresent) return res.status(400).json({ message: "Already interview is scheduled" })
 
         const interview = await Interview.create({

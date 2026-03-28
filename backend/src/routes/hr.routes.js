@@ -4,6 +4,7 @@ import authenticate from "../middlewares/verifyJwt.js"
 import { verifyHr } from "../middlewares/roleChecking.js"
 import { createInterview, getInterviews, deleteInterview } from "../controllers/interviewController.js"
 import { updateFeedback } from "../controllers/feedbackController.js"
+import { getHrFeedback } from "../controllers/feedbackController.js"
 
 const router = express.Router()
 
@@ -14,5 +15,5 @@ router.post("/interview", createInterview)
 router.get("/get/interviews", getInterviews)
 router.delete("/remove/:id", deleteInterview)
 router.patch("/update-feedback/:id", updateFeedback)
-
+router.get("/feedbacks", getHrFeedback)
 export default router
