@@ -23,3 +23,12 @@ export const verifyInterviewer = (req, res, next)=>{
     next()
 }
 
+export const verifyCandidate = (req, res, next)=>{
+    
+    const { role } = req.user
+    if(role !== "candidate") return res.status(401).json({message: "You are not authorized for candidate features"})
+
+    next()
+
+}
+

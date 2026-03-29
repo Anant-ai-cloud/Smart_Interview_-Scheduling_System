@@ -35,13 +35,11 @@ export const updateFeedback = async (req, res) => {
         const { publiccomment, isvisible } = req.body
         if (!publiccomment || !isvisible) return res.status(400).json({ message: "All fields are required with valid values" })
         const feedbackId = req.params.id
-        const myid = (req.user._id).toString()
+        const myId = req.user._id
         const feedback = await Feedback.findById(feedbackId).populate("interview")
+        if(!feedback) return res.status(400).json({message: "There is no feedback present"})
 
-        const hrid = (feedback.interview.hr).toString()
-
-
-        if (hrid !== myid) return res.status(401).json({ message: "You can only update your own interview's feedback" })
+       if (!(feedback.interview.hr.equals(myId))) return res.status(401).json({ message: "You can only update your own interview's feedback" })
 
         feedback.publiccomment = publiccomment
         feedback.isvisible = isvisible
@@ -62,6 +60,8 @@ export const getHrFeedback = async (req, res) => {
     try {
         const myid = req.user._id
         const feedbacks = await Feedback.find().populate("interview")
+        if(!feedbacks) return res.status(400).json({message: "There is no feedback present"})
+
         const sendFeedbacks = new Array()
         feedbacks.forEach((feedback) => {
             if (!(feedback.interview.hr.equals(myid))) return
@@ -81,9 +81,38 @@ export const getHrFeedback = async (req, res) => {
 
 export const getCandidateFeedback = async(req, res)=>{
     try {
+        const myId = req.user._id
+        const feedbacks = await Feedback.find().select("-comment").populate("interview")
+        if(!feedbacks) return res.status(400).json({message: "There is no feedback present"})
+        const sendFeedbacks = new Array()
+        feedbacks.forEach((feedback)=>{
+            if(!(feedback.interview.candidate.equals(myId)) || !(feedback.isvisible) ) return
+            sendFeedbacks.push(feedback.depopulate("interview"))
+        
+        })
+        if(!sendFeedbacks) return res.status(400).json({message: "You don't have any feedback"})
+        return res.status(200).json(sendFeedbacks)
         
     } catch (error) {
         console.log(error)
         return res.status(500).json("internal server error")
+    }
+}
+
+export const deleteFeedback = async(req,res)=>{
+    try {
+        const feedbackId = req.params.id
+        const myId = req.user._id
+        const feedback = await Feedback.findById(feedbackId).populate("interview")
+        if(!feedback) return res.status(400).json({message: "There is no feedback present"})
+        if(!(feedback.interview.hr.equals(myId))) return res.status(401).json({message: " You can only delete your own interview's Feedback "})
+        
+        return res.status(200).json({message: "Deleted successfully"})
+        
+
+        
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({message: "internal server error"})
     }
 }

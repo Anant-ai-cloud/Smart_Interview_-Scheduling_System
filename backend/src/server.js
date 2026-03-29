@@ -7,6 +7,7 @@ import authRouter from "./routes/auth.route.js"
 import adminRouter from "./routes/admin.routes.js"
 import hrRouter from "./routes/hr.routes.js"
 import interviewerRouter from "./routes/interviewer.route.js"
+import candidateRouter from "./routes/candidate.routes.js"
 
 
 const app = express()
@@ -27,3 +28,4 @@ app.use("/api/auth", authRouter)
 app.use("/api/admin", adminRouter)
 app.use("/api/hr", hrRouter)
 app.use("/api/interviewer", interviewerRouter)
+app.use("/api/candidate", candidateRouter)
