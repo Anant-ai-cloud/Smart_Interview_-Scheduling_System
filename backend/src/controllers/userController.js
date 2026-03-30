@@ -1,6 +1,6 @@
 import User from "../models/user.modal.js";
 
-const getAllUsers = async (req, res) => {
+export const getAllUsers = async (req, res) => {
     try {
 
         const userId = req.user._id
@@ -15,7 +15,7 @@ const getAllUsers = async (req, res) => {
     }
 }
 
-const gethrUsers = async (req, res) => {
+export const gethrUsers = async (req, res) => {
     try {
         const { role } = req.query
         if (!role) return res.status(400).json({ message: "role is required" })
@@ -38,8 +38,12 @@ const gethrUsers = async (req, res) => {
     }
 
 }
-export {
 
-    getAllUsers,
-    gethrUsers
+export const deleteUser = async(req, res)=>{
+    try {
+        
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({message: "internal server error"})
+    }
 }

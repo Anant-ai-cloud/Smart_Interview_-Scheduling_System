@@ -59,3 +59,17 @@ export const deleteInterview = async(req, res)=> {
         return res.status(500).json({message: "internal server error"})
     }
 }
+
+export const getAllInterviews = async(req, res)=>{
+    try {
+
+        const interviews = await Interview.find()
+        if(!interviews) return res.status(400).json({message: "No interview is present"})
+        return res.status(200).json(interviews)
+        
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({message: "internal server error"})
+    }
+
+}

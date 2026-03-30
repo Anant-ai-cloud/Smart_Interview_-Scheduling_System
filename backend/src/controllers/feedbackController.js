@@ -99,19 +99,29 @@ export const getCandidateFeedback = async(req, res)=>{
     }
 }
 
+export const getAllFeedbacks = async(req,res)=>{
+    try {
+        const feedbacks = await Feedback.find()
+        if(!feedbacks) return res.status(400).json({message: "No feedback present"})
+        
+        return res.status(200).json(feedbacks)
+        
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({message: " internal server error "})
+    }
+}
+
 export const deleteFeedback = async(req,res)=>{
     try {
         const feedbackId = req.params.id
-        const myId = req.user._id
-        const feedback = await Feedback.findById(feedbackId).populate("interview")
+     
+        const feedback = await Feedback.findByIdAndDelete(feedbackId)
         if(!feedback) return res.status(400).json({message: "There is no feedback present"})
-        if(!(feedback.interview.hr.equals(myId))) return res.status(401).json({message: " You can only delete your own interview's Feedback "})
-        
-        return res.status(200).json({message: "Deleted successfully"})
-        
 
-        
-    } catch (error) {
+        return res.status(200).json({message: "Deleted successfully"})
+    
+        } catch (error) {
         console.log(error)
         return res.status(500).json({message: "internal server error"})
     }
