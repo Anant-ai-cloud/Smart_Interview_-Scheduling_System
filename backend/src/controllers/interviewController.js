@@ -73,3 +73,17 @@ export const getAllInterviews = async(req, res)=>{
     }
 
 }
+
+export const getCandidateInterviews = async(req, res)=>{
+    try {
+        const candidateId = req.user._id
+        const interviews = await Interview.find({candidate: candidateId}).sort({ createdAt: 1 })
+        if(!interviews) return res.status(400).json({message: " No interview found "})
+        
+        return res.status(200).json(interviews)
+        
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({message: "internal server error"})
+    }
+}
