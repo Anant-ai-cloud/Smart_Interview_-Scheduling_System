@@ -119,7 +119,7 @@ export const deleteFeedback = async(req,res)=>{
         const feedback = await Feedback.findByIdAndDelete(feedbackId)
         if(!feedback) return res.status(400).json({message: "There is no feedback present"})
 
-        return res.status(200).json({message: "Deleted successfully"})
+        return res.status(200).json({feedback: feedback._id, message: "Deleted successfully"})
     
         } catch (error) {
         console.log(error)
