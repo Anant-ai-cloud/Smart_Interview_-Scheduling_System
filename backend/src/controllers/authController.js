@@ -55,6 +55,7 @@ export const register = async (req, res) => {
 
         return res.status(200).json({
             _id: newUser._id,
+            name: newUser.name,
             email: newUser.email,
             role: newUser.role
         })
@@ -89,8 +90,8 @@ export const login = async (req, res) => {
             maxAge: 7 * 24 * 60 * 60 * 1000
 
         }).json({
-            message: "User logged in successfully",
             _id: user._id,
+             name: newUser.name,
             email: user.email,
             role: user.role
         })

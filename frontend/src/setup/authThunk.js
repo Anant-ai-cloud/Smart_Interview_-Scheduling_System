@@ -35,3 +35,17 @@ export const login = (credentials)=> async(dispatch)=>{
         dispatch(setLogging(false))
     }
 }
+
+export const isLoggedIn = ()=> async(dispatch)=>{
+    try {
+       const res = await axiosInstance.get("/auth/check")
+       if(!res) console.log("error in isLoggedIn")
+        dispatch(login({userData: res.data}))
+    
+     } catch (error) {
+        toast.error(error.response?.data?.message)
+        
+    }finally{
+        dispatch(setLogging(false))
+    }
+}

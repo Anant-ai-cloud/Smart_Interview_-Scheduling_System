@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import Login from './pages/Login.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <div className=' bg-slate-400 text-black'> Hello This is smart interview Scheduler</div>
+    <Login/>
     </>
   )
 }

@@ -7,7 +7,7 @@ const router = express.Router()
 router.post("/register",  register)
 router.post("/login", login)
 router.post("/logout", authenticate, logout)
-router.get("/check", authenticate, (req, res)=>  res.status(200).json(req.user) )
+router.get("/check", authenticate, (req, res)=>{ const user = req.user; return res.status(200).json(user) })
 
 
 export default router
