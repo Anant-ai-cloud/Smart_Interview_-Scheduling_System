@@ -1,36 +1,22 @@
 import React, { useState } from 'react'
-import Button from "@mui/material/Button"
-import TextField from '@mui/material/TextField'
+import Input from '../components/Input.jsx'
+import Btn from '../components/Button.jsx'
+
 
 function Login() {
 
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
     return (
         <div>
-            <form>
+            <form className='w-[40vw] h-[40vh] border border-black rounded-md text-center ml-[30vw] mt-[20vh] p-5'>
+               
+                <Input id= {"email"} label={"Your email"} type={"email"}/>
+                 <Input id={"password"} label={"Your password"} type={"password"}/>
 
-                <TextField
-                    id="email"
-                    label="Your email"
-                    variant="outlined"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    InputProps={{
-                    className:'w-20 h-60'
 
-                    }}
-                />
-
-                <div>
-
-                    <label htmlFor="password">Your Password</label>
-                    <input type="password" id='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
-
-                </div>
-                <Button variant='contained' type='submit' className='w-5 h-5 text-white'>Login</Button>
-
+                <Btn type={"submit"} text={"login"}/>
+     
             </form>
+           
 
 
         </div>
