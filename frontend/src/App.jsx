@@ -3,14 +3,19 @@ import Login from './pages/Login.jsx'
 import { Outlet } from 'react-router-dom'
 import Signup from './pages/Signup.jsx'
 import "./index.css"
+import Navbar from './components/Navbar.jsx'
+import Footer from './components/Footer.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
   
-    <div>
-      <Outlet/>
+    <div className='flex'>
+
+      <Navbar/>
+       <Outlet/>
+      
    
     </div>
     

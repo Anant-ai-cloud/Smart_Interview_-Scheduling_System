@@ -8,6 +8,10 @@ import Login from './pages/Login.jsx'
 import Authprotect from './components/Authprotect.jsx'
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Signup from './pages/Signup.jsx'
+import Admin from './pages/Dashboard/Admin.jsx'
+import Hr from "./pages/dashboard/Hr.jsx"
+import Candidate from './pages/Dashboard/Candidate.jsx'
+import Interviewer from "./pages/dashboard/Interviewer.jsx"
 
 const router = createBrowserRouter([
   {
@@ -18,24 +22,54 @@ const router = createBrowserRouter([
 
         path: "/",
         element:
-          
-            <Login />
-         
+
+          <Login />
+
 
       },
       {
 
         path: "/signup",
-        element: 
-        
-            <Signup/>
-       
+        element:
+
+          <Signup />
+
 
       },
-      {},
-      {},
-      {},
-      {},
+      {
+
+        path: "/admindashboard",
+        element:
+
+          <Admin />
+
+
+      },
+      {
+
+        path: "/interviewerdashboard",
+        element:
+
+          <Interviewer />
+
+
+      },
+      {
+
+        path: "/hrdashboard",
+        element:
+        
+          <Hr />
+
+      },
+      {
+
+        path: "/dashboard",
+        element:
+
+          <Candidate />
+
+      },
       {},
       {},
       {},
@@ -50,7 +84,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={storage}>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
       <Toaster />
     </Provider>
   </StrictMode>,
