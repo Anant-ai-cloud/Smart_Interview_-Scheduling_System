@@ -71,7 +71,7 @@ This system provides a **centralized platform** to manage the entire interview w
 
 ---
 
-## 🗄 Database Schema
+##  Database Schema
 
 ### User
 ```js
