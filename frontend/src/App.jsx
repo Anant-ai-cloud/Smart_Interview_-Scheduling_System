@@ -5,20 +5,23 @@ import Signup from './pages/Signup.jsx'
 import "./index.css"
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import Sidebar from './components/Sidebar.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-  
+
     <div className='flex'>
 
-      <Navbar/>
-       <Outlet/>
-      
-   
+      <Sidebar />
+
+
+      <Outlet />
+
+
     </div>
-    
+
   )
 }
 

@@ -12,6 +12,7 @@ import Admin from './pages/Dashboard/Admin.jsx'
 import Hr from "./pages/dashboard/Hr.jsx"
 import Candidate from './pages/Dashboard/Candidate.jsx'
 import Interviewer from "./pages/dashboard/Interviewer.jsx"
+import SchedulePage from './pages/SchedulePage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
 
         path: "/interviewerdashboard",
         element:
-
+             
           <Interviewer />
 
 
@@ -70,7 +71,14 @@ const router = createBrowserRouter([
           <Candidate />
 
       },
-      {},
+      {
+
+        path: "/schedule",
+        element: 
+
+          <SchedulePage/>
+          
+      },
       {},
       {},
       {}
