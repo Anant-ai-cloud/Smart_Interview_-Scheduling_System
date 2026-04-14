@@ -6,85 +6,126 @@ import { Toaster } from "react-hot-toast"
 import App from './App.jsx'
 import Login from './pages/Login.jsx'
 import Authprotect from './components/Authprotect.jsx'
-import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { Route, RouterProvider, Routes, createBrowserRouter } from "react-router-dom"
 import Signup from './pages/Signup.jsx'
 import Admin from './pages/Dashboard/Admin.jsx'
 import Hr from "./pages/dashboard/Hr.jsx"
 import Candidate from './pages/Dashboard/Candidate.jsx'
 import Interviewer from "./pages/dashboard/Interviewer.jsx"
 import SchedulePage from './pages/SchedulePage.jsx'
+import Sidebar from './components/Sidebar.jsx'
+import DashboardLayout from './components/DashboardLayout.jsx'
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <App />,
+//     children: [
+//       {
 
-        path: "/",
-        element:
+//         path: "/",
+//         element:
 
-          <Login />
+       
 
+//           <Login />
 
-      },
-      {
-
-        path: "/signup",
-        element:
-
-          <Signup />
-
-
-      },
-      {
-
-        path: "/admindashboard",
-        element:
-
-          <Admin />
-
-
-      },
-      {
-
-        path: "/interviewerdashboard",
-        element:
-             
-          <Interviewer />
-
-
-      },
-      {
-
-        path: "/hrdashboard",
-        element:
-        
-          <Hr />
-
-      },
-      {
-
-        path: "/dashboard",
-        element:
-
-          <Candidate />
-
-      },
-      {
-
-        path: "/schedule",
-        element: 
-
-          <SchedulePage/>
           
-      },
-      {},
-      {},
-      {}
-    ]
-  }
-])
+
+
+//       },
+//       {
+
+//         path: "/signup",
+//         element:
+
+
+          
+//           <Signup />
+
+
+//       },
+//       {
+
+//         path: "/admindashboard",
+//         element:
+
+//          <div>
+//           <Sidebar/>
+      
+//           <Admin />
+//           </div>
+
+
+//       },
+//       {
+
+//         path: "/interviewerdashboard",
+//         element:
+
+//          <div>
+//           <Sidebar/>
+             
+//           <Interviewer />
+//           </div>
+
+
+//       },
+//       {
+
+//         path: "/hrdashboard",
+//         element:
+        
+//          <div>
+//           <Sidebar/>
+//           <Hr />
+//           </div>
+
+//       },
+//       {
+
+//         path: "/dashboard",
+//         element:
+
+//           <div>
+//           <Sidebar/>
+//           <Candidate />
+//           </div>
+
+//       },
+//       {
+
+//         path: "/schedule",
+//         element: 
+//            <div>
+//           <Sidebar/>
+//           <SchedulePage/>
+//           </div>
+          
+//       },
+//       {},
+//       {},
+//       {}
+//     ]
+//   }
+// ])
+<Routes>
+
+  <Route path='/' element= {<Login/>}/>
+  <Route path='/signup' element= {<Signup/>}/>
+  <Route path='/' element= {<DashboardLayout/>}>
+
+  <Route path='admindashboard' element= {<Admin/>}/>
+  <Route path='interviewerdashboard' element= {<Interviewer/>}/>
+  <Route path='admindashboard' element= {<Admin/>}/>
+  <Route path='admindashboard' element= {<Admin/>}/>
+  <Route path='admindashboard' element= {<Admin/>}/>
+  <Route path='admindashboard' element= {<Admin/>}/>
+
+  
+   </Route>
+
+</Routes>
 
 
 

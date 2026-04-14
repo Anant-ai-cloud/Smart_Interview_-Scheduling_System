@@ -14,7 +14,6 @@ function App() {
 
     <div className='flex'>
 
-      <Sidebar />
 
 
       <Outlet />
