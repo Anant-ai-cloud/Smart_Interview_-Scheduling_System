@@ -13,10 +13,8 @@ function App() {
   return (
 
     <div className='flex'>
-
-
-
-      <Outlet />
+      <Sidebar/>
+      <Outlet/>
 
 
     </div>
