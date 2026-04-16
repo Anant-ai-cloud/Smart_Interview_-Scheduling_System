@@ -26,12 +26,7 @@ const router = createBrowserRouter([
         path: "/",
         element:
 
-       
-
           <Login />
-
-          
-
 
       },
       {
@@ -39,71 +34,57 @@ const router = createBrowserRouter([
         path: "/signup",
         element:
 
-
-          
           <Signup />
 
 
       },
       {
+        element: <DashboardLayout />,
+        children: [
 
-        path: "/admindashboard",
-        element:
+          {
 
-         <div>
-          <Sidebar/>
-      
-          <Admin />
-          </div>
+            path: "/admindashboard",
+            element:
 
+              <Admin />
 
+          },
+          {
+
+            path: "/interviewerdashboard",
+            element:
+
+              <Interviewer />
+
+          },
+          {
+
+            path: "/hrdashboard",
+            element:
+
+              <Hr />
+
+          },
+          {
+
+            path: "/dashboard",
+            element:
+
+              <Candidate />
+
+          },
+          {
+
+            path: "/schedule",
+            element:
+
+              <SchedulePage />
+
+          },
+        ]
       },
-      {
 
-        path: "/interviewerdashboard",
-        element:
-
-         <div>
-          <Sidebar/>
-             
-          <Interviewer />
-          </div>
-
-
-      },
-      {
-
-        path: "/hrdashboard",
-        element:
-        
-         <div>
-          <Sidebar/>
-          <Hr />
-          </div>
-
-      },
-      {
-
-        path: "/dashboard",
-        element:
-
-          <div>
-          <Sidebar/>
-          <Candidate />
-          </div>
-
-      },
-      {
-
-        path: "/schedule",
-        element: 
-           <div>
-          <Sidebar/>
-          <SchedulePage/>
-          </div>
-          
-      },
-      {},
       {},
       {}
     ]
@@ -117,7 +98,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={storage}>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
       <Toaster />
     </Provider>
   </StrictMode>,

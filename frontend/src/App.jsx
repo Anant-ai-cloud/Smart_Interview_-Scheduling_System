@@ -12,8 +12,8 @@ function App() {
 
   return (
 
-    <div className='flex'>
-      <Sidebar/>
+    <div>
+      
       <Outlet/>
 
 
