@@ -1,11 +1,7 @@
-import React from 'react'
+import DashboardContent from "../../components/DashboardContent.jsx";
 
 function Admin() {
-  return (
-    <div>
-      Admin Dashboard
-    </div>
-  )
+  return <DashboardContent />;
 }
 
-export default Admin
+export default Admin;
