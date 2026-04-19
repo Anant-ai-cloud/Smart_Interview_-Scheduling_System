@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Input from '../components/Input.jsx'
 import Btn from '../components/Button.jsx'
+import { login } from '../store/authSlice.js'
+import { useDispatch } from 'react-redux'
 
 
 function Login() {
+
+    const dispatch = useDispatch()
+
+    
 
     return (
         <div>

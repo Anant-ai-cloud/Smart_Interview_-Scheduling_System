@@ -1,6 +1,6 @@
 function DashboardContent() {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-xl mx-auto ml-auto mt-32">
 
       <h1 className="text-3xl font-bold mb-6">
         Systems Overview
@@ -8,7 +8,7 @@ function DashboardContent() {
 
       <div className="grid grid-cols-12 gap-6">
 
-        <div className="col-span-8 bg-white p-6 rounded-xl">
+        <div className="col-span-8 bg-white w-72 p-6 rounded-xl">
           <h2 className="font-bold mb-4">Total Interviews</h2>
 
           <div className="flex gap-2 items-end h-40">

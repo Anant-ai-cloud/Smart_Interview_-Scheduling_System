@@ -1,6 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Topbar = () => {
+
+  const user = useSelector(state=> state.auth.user)
+
+
   return (
     <header className="fixed left-64 right-0 top-0 h-16 bg-[#fff9ec]/70 backdrop-blur px-8 flex justify-between items-center">
       <input
@@ -15,7 +20,7 @@ const Topbar = () => {
 
         <div className="flex items-center gap-2">
           <div className="text-right">
-            <p className="text-sm font-bold">Alex Morgan</p>
+            <p className="text-sm font-bold">{user.name}</p>
             <p className="text-xs">Admin</p>
           </div>
           <img

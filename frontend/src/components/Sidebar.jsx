@@ -9,9 +9,9 @@ function Sidebar() {
 
       <nav className="px-4 space-y-2">
         <Link to={"/admindashboard"} className="flex gap-3 p-3 hover:bg-amber-100 rounded-lg">Dashboard</Link>
-        <a className="flex gap-3 p-3 hover:bg-amber-100">Users</a>
-        <Link to={"/schedule"} className="flex gap-3 p-3 hover:bg-amber-100">Schedules</Link>
-        <a className="flex gap-3 p-3 hover:bg-amber-100">Feedback</a>
+        <a className="flex gap-3 p-3 hover:bg-amber-100">All Users</a>
+        <Link to={"/schedule"} className="flex gap-3 p-3 hover:bg-amber-100">All Interviews</Link>
+        <a className="flex gap-3 p-3 hover:bg-amber-100">All Feedbacks</a>
       </nav>
     </aside>
   );
