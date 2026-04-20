@@ -12,7 +12,7 @@ function Input({id, label, type}) {
         variant="outlined"
         value={value}
         type={type}
-        onChange={(e) => setValue(e.target.value)}
+       
          InputProps={{
           className: "w-[35vw] m-2 p-1"
          }}

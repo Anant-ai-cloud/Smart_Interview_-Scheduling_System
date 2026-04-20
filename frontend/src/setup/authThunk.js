@@ -20,7 +20,7 @@ export const signup = (credentials)=> async(dispatch)=>{
     }
 }
 
-export const login = (credentials)=> async(dispatch)=>{
+export const logging = (credentials)=> async(dispatch)=>{
     try {
         const res = await axiosInstance.post("/auth/login", credentials)
         if(!res) console.log("error in login thunk")
@@ -43,7 +43,7 @@ export const isLoggedIn = ()=> async(dispatch)=>{
         dispatch(login({userData: res.data}))
     
      } catch (error) {
-        toast.error(error.response?.data?.message)
+        toast.error(error.response?.data?.message || "Cannot keep you logged in")
         
     }finally{
         dispatch(setLogging(false))
