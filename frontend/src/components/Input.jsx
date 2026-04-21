@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import TextField from "@mui/material/TextField";
 
 
-function Input({id, label, type}) {
-  const [value, setValue] = useState("")
+function Input({id, label, type, value}) {
+  
   return (
     <div>
       <TextField
@@ -11,6 +11,7 @@ function Input({id, label, type}) {
         label={label}
         variant="outlined"
         value={value}
+       
         type={type}
        
          InputProps={{

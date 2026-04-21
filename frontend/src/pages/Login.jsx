@@ -24,8 +24,8 @@ function Login() {
         <div>
             <form className='w-[40vw] h-[40vh] border border-black rounded-md text-center ml-[30vw] mt-[20vh] p-5' onSubmit={handleSubmit}>
                
-                <Input id= {"email"} label={"Your email"} type={"email"} onChange={(e)=> setFormData({...formData, email: e.target.value})}/>
-                 <Input id={"password"} label={"Your password"} type={"password"} onChange={(e)=> setFormData({...formData, password: e.target.value}) }/>
+                <Input id= {"email"} label={"Your email"} value={formData.email} type={"email"} onChange={(e)=> setFormData({...formData, email: e.target.value})}/>
+                 <Input id={"password"} value={formData.password} label={"Your password"} type={"password"} onChange={(e)=> setFormData({...formData, password: e.target.value}) }/>
 
 
                 <Btn type={"submit"} text={"login"}/>
