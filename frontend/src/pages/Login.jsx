@@ -13,7 +13,8 @@ function Login() {
     const dispatch = useDispatch()
     const handleSubmit = (e)=>{
         e.preventDefault()
-        console.log(formData)
+        dispatch(logging(formData))
+        
 
     }
 
