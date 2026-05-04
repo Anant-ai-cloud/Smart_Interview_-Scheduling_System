@@ -10,6 +10,7 @@ const navigate = useNavigate()
 const [loader, setLoader] = useState(true)
 
 useEffect(()=>{
+    
   if(authentication && status !== authentication){
     navigate("/")
   }else if(!authentication && status !== authentication){

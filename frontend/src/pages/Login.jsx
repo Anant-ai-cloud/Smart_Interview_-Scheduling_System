@@ -30,7 +30,7 @@ function Login() {
                  <Input id={"password"} value={formData.password} label={"Your password"} type={"password"} onChange={(e)=> setFormData({...formData, password: e.target.value}) }/>
 
 
-                <Btn type={"submit"} text={"login"}/>
+                <Btn type={"submit"} text={"login"} polish='left-52 w-[10vw]'/>
                 <span>Don't have a Account? <Link to={"/signup"} className='text-blue-400 underline'> sign in </Link></span>
      
             </form>

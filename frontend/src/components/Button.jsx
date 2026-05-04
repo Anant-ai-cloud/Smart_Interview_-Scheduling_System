@@ -4,10 +4,10 @@ import Button from '@mui/material/Button';
 
 
 
-function Btn({type, text}) {
+function Btn({type, text, polish = ""}) {
   return (
     <div>
-      <Button variant='contained' type={type} className='absolute p-1 w-[10vw] mt-2 left-52'>{text}</Button>
+      <Button variant='contained' type={type} className={`absolute p-1 mt-2 ${polish}`}>{text}</Button>
     </div>
   )
 }

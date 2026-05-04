@@ -21,7 +21,7 @@ function App() {
   },[])
 
 
-  return  
+  return  (
 
     <div>
       
@@ -29,6 +29,7 @@ function App() {
 
 
     </div>
+    )
 
   
 }

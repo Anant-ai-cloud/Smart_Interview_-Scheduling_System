@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import Btn from "./Button";
 
 const Topbar = () => {
 
@@ -23,10 +24,9 @@ const Topbar = () => {
             <p className="text-sm font-bold">{user.name}</p>
             <p className="text-xs">Admin</p>
           </div>
-          <img
-            src="https://i.pravatar.cc/40"
-            className="w-10 h-10 rounded-full"
-          />
+
+         { <Btn type="button" polish="w-[5vw] h-[5vh]">Logout</Btn>}
+          
         </div>
       </div>
     </header>
