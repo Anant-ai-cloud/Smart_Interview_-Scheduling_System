@@ -26,7 +26,9 @@ const router = createBrowserRouter([
         path: "/",
         element:
 
+          <Authprotect authentication= {false}>
           <Login />
+          </Authprotect>
 
       },
       {
@@ -34,7 +36,9 @@ const router = createBrowserRouter([
         path: "/signup",
         element:
 
+          <Authprotect authentication= {false}>
           <Signup />
+          </Authprotect>
 
 
       },
@@ -47,15 +51,20 @@ const router = createBrowserRouter([
             path: "/admindashboard",
             element:
 
+            <Authprotect authentication = {true}>
+
               <Admin />
+              </Authprotect>
 
           },
           {
 
             path: "/interviewerdashboard",
             element:
-
+ 
+            <Authprotect authentication = {true}>
               <Interviewer />
+              </Authprotect>
 
           },
           {
@@ -63,7 +72,9 @@ const router = createBrowserRouter([
             path: "/hrdashboard",
             element:
 
+            <Authprotect authentication= {true}>
               <Hr />
+              </Authprotect>
 
           },
           {
@@ -71,7 +82,9 @@ const router = createBrowserRouter([
             path: "/dashboard",
             element:
 
+            <Authprotect authentication= {true}>
               <Candidate />
+              </Authprotect>
 
           },
           {
@@ -79,7 +92,9 @@ const router = createBrowserRouter([
             path: "/schedule",
             element:
 
+              <Authprotect authentication = {true}>
               <SchedulePage />
+              </Authprotect>
 
           },
         ]

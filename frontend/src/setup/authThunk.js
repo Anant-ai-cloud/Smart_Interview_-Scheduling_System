@@ -43,6 +43,7 @@ export const isLoggedIn = ()=> async(dispatch)=>{
         dispatch(login({userData: res.data}))
     
      } catch (error) {
+        console.log(error.response?.data?.message)
         toast.error(error.response?.data?.message || "Cannot keep you logged in")
         
     }finally{
