@@ -8,16 +8,20 @@ import Footer from './components/Footer.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import { useDispatch } from 'react-redux'
 import { isLoggedIn } from './setup/authThunk.js'
+import { useSelector } from 'react-redux'
+import DashboardLayout from './components/DashboardLayout.jsx'
 
 function App() {
  const dispatch = useDispatch()
+ const status = useSelector(state=> state.auth.status)
+
   useEffect(()=>{
 
     dispatch(isLoggedIn())
   },[])
 
 
-  return (
+  return  
 
     <div>
       
@@ -26,7 +30,7 @@ function App() {
 
     </div>
 
-  )
+  
 }
 
 export default App

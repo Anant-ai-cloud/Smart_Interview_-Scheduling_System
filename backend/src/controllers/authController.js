@@ -91,7 +91,7 @@ export const login = async (req, res) => {
 
         }).json({
             _id: user._id,
-             name: newUser.name,
+             name: user.name,
             email: user.email,
             role: user.role
         })
