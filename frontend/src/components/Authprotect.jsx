@@ -28,7 +28,7 @@ useEffect(()=>{
   }
         setLoader(false)
 
-},[status, navigate, authentication])
+},[status, navigate,  authentication])
 
 
     return loader ? <h1>Loading...</h1> :<>{children} </>

@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
-import { login, setLogging, logout } from "../store/authSlice.js";
+import { login, setLogging, logout, setCheckingAuth } from "../store/authSlice.js";
 import axiosInstance from "./axiosInstance.js";
+import { useSelector } from "react-redux";
 
 export const signup = (credentials)=> async(dispatch)=>{
     try {
@@ -37,7 +38,9 @@ export const logging = (credentials)=> async(dispatch)=>{
 }
 
 export const isLoggedIn = ()=> async(dispatch)=>{
-    try {
+    
+try {
+        
        const res = await axiosInstance.get("/auth/check")
        if(!res) console.log("error in isLoggedIn")
         dispatch(login({userData: res.data}))
@@ -47,6 +50,6 @@ export const isLoggedIn = ()=> async(dispatch)=>{
         toast.error(error.response?.data?.message || "Cannot keep you logged in")
         
     }finally{
-        dispatch(setLogging(false))
+        dispatch(setCheckingAuth(false))
     }
 }
