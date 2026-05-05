@@ -10,14 +10,16 @@ const navigate = useNavigate()
 const [loader, setLoader] = useState(true)
 
 useEffect(()=>{
-    
+    console.log(user?.role)
   if(authentication && status !== authentication){
     navigate("/")
   }else if(!authentication && status !== authentication){
     if(user?.role === "admin"){
+        
         navigate("/admindashboard")
 
     }else if(user?.role === "hr"){
+        console.log("Im hr")
         navigate("/hrdashboard")
 
     }else if(user?.role === "interviewer"){

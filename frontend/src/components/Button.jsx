@@ -1,13 +1,13 @@
 import React from 'react';
-// import Button from '@mui/material/Button'
 import Button from '@mui/material/Button';
 
 
 
-function Btn({type, text, polish = ""}) {
+function Btn({type, text, polish = "", onClick}) {
+  
   return (
     <div>
-      <Button variant='contained' type={type} className={`absolute p-1 mt-2 ${polish}`}>{text}</Button>
+      <Button variant='contained' type={type} className={`p-1 mt-2 ${polish}`} onClick={onClick}>{text}</Button>
     </div>
   )
 }

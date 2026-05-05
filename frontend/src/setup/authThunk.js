@@ -8,7 +8,7 @@ export const signup = (credentials)=> async(dispatch)=>{
 
         const res = await axiosInstance.post("/auth/register", credentials)
 
-        if(!res) console.log("error in signup thunk")
+        
         dispatch(login({userData: res.data}))
         toast.success(" Signedup successfully ")
      
@@ -24,7 +24,7 @@ export const signup = (credentials)=> async(dispatch)=>{
 export const logging = (credentials)=> async(dispatch)=>{
     try {
         const res = await axiosInstance.post("/auth/login", credentials)
-        if(!res) console.log("error in login thunk")
+        
         
         dispatch(login({userData: res.data}))
         toast.success("Logged in successfully")
@@ -39,17 +39,33 @@ export const logging = (credentials)=> async(dispatch)=>{
 
 export const isLoggedIn = ()=> async(dispatch)=>{
     
-try {
-        
+try {   
        const res = await axiosInstance.get("/auth/check")
-       if(!res) console.log("error in isLoggedIn")
+       
         dispatch(login({userData: res.data}))
     
      } catch (error) {
         console.log(error.response?.data?.message)
-        toast.error(error.response?.data?.message || "Cannot keep you logged in")
+        toast.error("Login to your account")
         
     }finally{
+
+        setTimeout(()=>{
         dispatch(setCheckingAuth(false))
+
+        },500)
+    }
+}
+
+export const Logout = ()=> async(dispatch)=>{
+    console.log("Reached logout thunk")
+    try {
+        dispatch(logout())
+   
+        const res = await axiosInstance.post("/auth/logout")
+         toast.success(res.data?.message)
+    } catch (error) {
+        toast.error(error.response?.data?.message || "Error in Logout thunk")
+        console.log(error)
     }
 }
