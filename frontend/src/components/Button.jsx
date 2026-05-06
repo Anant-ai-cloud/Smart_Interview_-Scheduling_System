@@ -7,7 +7,7 @@ function Btn({type, text, polish = "", onClick}) {
   
   return (
     <div>
-      <Button variant='contained' type={type} className={`p-1 mt-2 ${polish}`} onClick={onClick}>{text}</Button>
+      <Button variant='contained' type={type} className={` absolute p-1 mt-2 ${polish}`} onClick={onClick}>{text}</Button>
     </div>
   )
 }

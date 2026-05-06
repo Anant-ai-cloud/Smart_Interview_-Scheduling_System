@@ -31,6 +31,7 @@ const router = createBrowserRouter([
           </Authprotect>
 
       },
+
       {
 
         path: "/signup",
@@ -54,58 +55,45 @@ const router = createBrowserRouter([
         children: [
 
           {
-
-            path: "/admindashboard",
+           path: "/admindashboard",
             element:
 
-           
-
-              <Admin />
+            <Admin />
               
-
           },
 
             {
-
             path: "/interviewerdashboard",
             element:
  
-            
               <Interviewer />
             
-
           },
           
           {
-
             path: "/hrdashboard",
             element:
 
-            
-              <Hr />
+            <Hr />
              
-
           },
-          {
 
+          {
             path: "/dashboard",
             element:
 
+            <Candidate />
             
-              <Candidate />
-            
+           },
 
-          },
           {
-
             path: "/schedule",
             element:
 
-              
               <SchedulePage />
             
-
           },
+
         ]
       },
 
